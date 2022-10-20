@@ -1,30 +1,25 @@
-
-
-function generateRandomNumber(range) {
-  let max = 2 + range
-  let min = 1
+function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 let totalPoint = 0
 let gameContinue = true
 let range = 0
-
+const min = 1
+let max = 2
 const username = prompt('Enter your username: ')
 
 while (gameContinue) {
-  let num = generateRandomNumber(range)
-  console.log(num)
+  let num = generateRandomNumber(min, max)
+  // console.log(num)
   console.log('Stage', range + 1)
-  let gussedNumber = prompt('Enter a number: ')
-  if (num == gussedNumber) {
+  let gussedNumber = parseInt(prompt(`Enter a number between ${min} and ${max} : `))
+  if (num === gussedNumber) {
     totalPoint += 1
     range += 1
-    console.log('You gussed Right')
-    console.log(username, ' Your total points is ', totalPoint)
-
+    max += 1
+    console.log(`${username} You gussed Right, Your total point is ${totalPoint}`)
   } else {
-    console.log('You gussed wrong')
-    console.log(username, ' Your total points is ', totalPoint)
+    console.log(`${username} You gussed Wrong, Your total point is ${totalPoint}`)
     gameContinue = false
   }
 }
