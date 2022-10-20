@@ -13,7 +13,7 @@ while (gameContinue) {
   // console.log(num)
   console.log('Stage', range + 1)
   let gussedNumber = parseInt(prompt(`Enter a number between ${min} and ${max + range} : `))
-  
+
   if (num === gussedNumber) {
     console.log(`${username} You gussed Right, Your total point is ${totalPoint}`)
     totalPoint += 1
