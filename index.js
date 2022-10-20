@@ -15,9 +15,9 @@ while (gameContinue) {
   let gussedNumber = parseInt(prompt(`Enter a number between ${min} and ${max + range} : `))
 
   if (num === gussedNumber) {
-    console.log(`${username} You gussed Right, Your total point is ${totalPoint}`)
     totalPoint += 1
     range += 1
+    console.log(`${username} You gussed Right, Your total point is ${totalPoint}`)
   } else {
     console.log(`${username} You gussed Wrong, Your total point is ${totalPoint}`)
     gameContinue = false
